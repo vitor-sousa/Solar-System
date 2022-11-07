@@ -36,23 +36,47 @@ class MainViewModel : ViewModel() {
                     gravity = 3.7F,
                     image = R.mipmap.mercury
                 ), CelestialObject(
-                    name = "Sun",
-                    type = CelestialType.STAR,
-                    size = 45F,
-                    gravity = 4F,
-                    image = R.mipmap.sun
+                    name = "Venus",
+                    type = CelestialType.PLANET,
+                    size = 4.60F,
+                    gravity = 8.87F,
+                    image = R.mipmap.venus
                 ), CelestialObject(
-                    name = "Sun",
-                    type = CelestialType.STAR,
-                    size = 45F,
-                    gravity = 4F,
-                    image = R.mipmap.sun
+                    name = "Earth",
+                    type = CelestialType.PLANET,
+                    size = 510.072F,
+                    gravity = 9.78F,
+                    image = R.mipmap.earth
                 ), CelestialObject(
-                    name = "Sun",
-                    type = CelestialType.STAR,
-                    size = 45F,
-                    gravity = 4F,
-                    image = R.mipmap.sun
+                    name = "Mars",
+                    type = CelestialType.PLANET,
+                    size = 144.37F,
+                    gravity = 3.72F,
+                    image = R.mipmap.mars
+                ), CelestialObject(
+                    name = "Jupiter",
+                    type = CelestialType.PLANET,
+                    size = 6.1469F,
+                    gravity = 24.79F,
+                    image = R.mipmap.jupiter
+                ), CelestialObject(
+                    name = "Saturn",
+                    type = CelestialType.PLANET,
+                    size = 4.27F,
+                    gravity = 10.44F,
+                    image = R.mipmap.saturn
+                ), CelestialObject(
+                    name = "Uranus",
+                    type = CelestialType.PLANET,
+                    size = 8.1156F,
+                    gravity = 8.69F,
+                    image = R.mipmap.uranus
+                ), CelestialObject(
+                    name = "Neptune",
+                    type = CelestialType.PLANET,
+                    size = 7.6187F,
+                    gravity = 11.15F,
+                    image = R.mipmap.neptune
                 ),
             )
         )

@@ -41,7 +41,7 @@ class CelestialAdapter: RecyclerView.Adapter<CelestialAdapter.CelestialViewHolde
                 textViewName.text = celestialObject.name
                 textViewSize.text = "Size: ${celestialObject.size} km²"
                 textViewGravity.text = "Gravity: ${celestialObject.gravity} m/s²"
-                textViewType.text = "Type: ${celestialObject.type.name}"
+                textViewType.text = celestialObject.type.name
                 imageViewImage.setImageResource(celestialObject.image)
             }
         }
