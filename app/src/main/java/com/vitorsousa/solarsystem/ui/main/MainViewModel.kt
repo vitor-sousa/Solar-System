@@ -2,9 +2,12 @@ package com.vitorsousa.solarsystem.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.vitorsousa.solarsystem.R
 import com.vitorsousa.solarsystem.data.CelestialObject
 import com.vitorsousa.solarsystem.data.CelestialType
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
