@@ -9,8 +9,11 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_5_API_33" value="120" />
                   <entry key="RX8MA01RCBV" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="ZUK&#10; Z2 Plus" value="120" />
+                  <entry key="eaa6f4f8" value="120" />
                   <entry key="samsung&#10; SM-G973F" value="120" />
                 </map>
               </option>
@@ -23,6 +26,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_5_API_33" value="120" />
                   <entry key="RX8MA01RCBV" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="samsung&#10; SM-G973F" value="120" />

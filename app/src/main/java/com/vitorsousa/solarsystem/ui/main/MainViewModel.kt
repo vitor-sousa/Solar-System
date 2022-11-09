@@ -16,11 +16,13 @@ class MainViewModel : ViewModel() {
 
 
     init {
-        loadSolarSystem()
+        viewModelScope.launch {
+            loadSolarSystem()
+        }
     }
 
 
-    private fun loadSolarSystem() {
+    private suspend fun loadSolarSystem() {
         solarSystem.postValue(
             listOf(
                 CelestialObject(
@@ -28,55 +30,55 @@ class MainViewModel : ViewModel() {
                     type = CelestialType.STAR,
                     size = 1392700F,
                     gravity = 274.0F,
-                    image = R.mipmap.sun
+                    image = R.drawable.sun
                 ), CelestialObject(
                     name = "Mercury",
                     type = CelestialType.PLANET,
                     size = 	4879.4F,
                     gravity = 3.7F,
-                    image = R.mipmap.mercury
+                    image = R.drawable.mercury
                 ), CelestialObject(
                     name = "Venus",
                     type = CelestialType.PLANET,
                     size = 12103.6F,
                     gravity = 8.87F,
-                    image = R.mipmap.venus
+                    image = R.drawable.venus
                 ), CelestialObject(
                     name = "Earth",
                     type = CelestialType.PLANET,
                     size = 12756.2F,
                     gravity = 9.78F,
-                    image = R.mipmap.earth
+                    image = R.drawable.earth
                 ), CelestialObject(
                     name = "Mars",
                     type = CelestialType.PLANET,
                     size = 6792.4F,
                     gravity = 3.72F,
-                    image = R.mipmap.mars
+                    image = R.drawable.mars
                 ), CelestialObject(
                     name = "Jupiter",
                     type = CelestialType.PLANET,
                     size = 142984F,
                     gravity = 24.79F,
-                    image = R.mipmap.jupiter
+                    image = R.drawable.jupiter
                 ), CelestialObject(
                     name = "Saturn",
                     type = CelestialType.PLANET,
                     size = 120536F,
                     gravity = 10.44F,
-                    image = R.mipmap.saturn
+                    image = R.drawable.saturn
                 ), CelestialObject(
                     name = "Uranus",
                     type = CelestialType.PLANET,
                     size = 50724F,
                     gravity = 8.69F,
-                    image = R.mipmap.uranus
+                    image = R.drawable.uranus
                 ), CelestialObject(
                     name = "Neptune",
                     type = CelestialType.PLANET,
                     size = 49528F,
                     gravity = 11.15F,
-                    image = R.mipmap.neptune
+                    image = R.drawable.neptune
                 ),
             )
         )

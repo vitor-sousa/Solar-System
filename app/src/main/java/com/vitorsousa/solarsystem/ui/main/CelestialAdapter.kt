@@ -2,13 +2,16 @@ package com.vitorsousa.solarsystem.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.vitorsousa.solarsystem.data.CelestialObject
 import com.vitorsousa.solarsystem.databinding.ItemCelestialBinding
 
 class CelestialAdapter: RecyclerView.Adapter<CelestialAdapter.CelestialViewHolder>() {
 
-    private val celestialObjectList = mutableListOf<CelestialObject>()
+    private val mDiffer = AsyncListDiffer(this, DIFF_UTIL)
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CelestialViewHolder {
         return CelestialViewHolder(
@@ -19,17 +22,15 @@ class CelestialAdapter: RecyclerView.Adapter<CelestialAdapter.CelestialViewHolde
     }
 
     override fun onBindViewHolder(holder: CelestialViewHolder, position: Int) {
-        holder.bind(celestialObjectList[position])
+        holder.bind(mDiffer.currentList[position])
     }
 
     override fun getItemCount(): Int {
-        return celestialObjectList.size
+        return mDiffer.currentList.size
     }
 
     fun updateList(newList: List<CelestialObject>) {
-        celestialObjectList.clear()
-        celestialObjectList.addAll(newList)
-        notifyDataSetChanged()
+        mDiffer.submitList(newList)
     }
 
 
@@ -45,6 +46,17 @@ class CelestialAdapter: RecyclerView.Adapter<CelestialAdapter.CelestialViewHolde
                 imageViewImage.setImageResource(celestialObject.image)
             }
         }
+    }
+
+    object DIFF_UTIL: DiffUtil.ItemCallback<CelestialObject>(){
+        override fun areItemsTheSame(oldItem: CelestialObject, newItem: CelestialObject): Boolean {
+            return oldItem.name == newItem.name
+        }
+
+        override fun areContentsTheSame(oldItem: CelestialObject, newItem: CelestialObject): Boolean {
+            return oldItem == newItem
+        }
+
     }
 
 }
