@@ -26,55 +26,55 @@ class MainViewModel : ViewModel() {
                 CelestialObject(
                     name = "Sun",
                     type = CelestialType.STAR,
-                    size = 1.392F,
+                    size = 1392700F,
                     gravity = 274.0F,
                     image = R.mipmap.sun
                 ), CelestialObject(
                     name = "Mercury",
                     type = CelestialType.PLANET,
-                    size = 4.879F,
+                    size = 	4879.4F,
                     gravity = 3.7F,
                     image = R.mipmap.mercury
                 ), CelestialObject(
                     name = "Venus",
                     type = CelestialType.PLANET,
-                    size = 4.60F,
+                    size = 12103.6F,
                     gravity = 8.87F,
                     image = R.mipmap.venus
                 ), CelestialObject(
                     name = "Earth",
                     type = CelestialType.PLANET,
-                    size = 510.072F,
+                    size = 12756.2F,
                     gravity = 9.78F,
                     image = R.mipmap.earth
                 ), CelestialObject(
                     name = "Mars",
                     type = CelestialType.PLANET,
-                    size = 144.37F,
+                    size = 6792.4F,
                     gravity = 3.72F,
                     image = R.mipmap.mars
                 ), CelestialObject(
                     name = "Jupiter",
                     type = CelestialType.PLANET,
-                    size = 6.1469F,
+                    size = 142984F,
                     gravity = 24.79F,
                     image = R.mipmap.jupiter
                 ), CelestialObject(
                     name = "Saturn",
                     type = CelestialType.PLANET,
-                    size = 4.27F,
+                    size = 120536F,
                     gravity = 10.44F,
                     image = R.mipmap.saturn
                 ), CelestialObject(
                     name = "Uranus",
                     type = CelestialType.PLANET,
-                    size = 8.1156F,
+                    size = 50724F,
                     gravity = 8.69F,
                     image = R.mipmap.uranus
                 ), CelestialObject(
                     name = "Neptune",
                     type = CelestialType.PLANET,
-                    size = 7.6187F,
+                    size = 49528F,
                     gravity = 11.15F,
                     image = R.mipmap.neptune
                 ),
