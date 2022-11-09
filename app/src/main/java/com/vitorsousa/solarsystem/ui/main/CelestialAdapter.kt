@@ -39,7 +39,7 @@ class CelestialAdapter: RecyclerView.Adapter<CelestialAdapter.CelestialViewHolde
         fun bind(celestialObject: CelestialObject) {
             binding.apply {
                 textViewName.text = celestialObject.name
-                textViewSize.text = "Size: ${celestialObject.size} km²"
+                textViewSize.text = "Diameter: ${celestialObject.size} km"
                 textViewGravity.text = "Gravity: ${celestialObject.gravity} m/s²"
                 textViewType.text = celestialObject.type.name
                 imageViewImage.setImageResource(celestialObject.image)
