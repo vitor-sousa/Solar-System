@@ -51,6 +51,8 @@ class ExampleStartupBenchmark {
         }
     ) {
         val recyclerView = device.findObject(By.res(packageName, "recyclerView_celestial"))
+        recyclerView.setGestureMargin(device.displayWidth / 5)
+        recyclerView.fling(Direction.DOWN)
         recyclerView.fling(Direction.DOWN)
         device.waitForIdle()
     }
