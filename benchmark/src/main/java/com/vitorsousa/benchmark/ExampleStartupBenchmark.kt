@@ -1,8 +1,6 @@
 package com.vitorsousa.benchmark
 
-import androidx.benchmark.macro.FrameTimingMetric
-import androidx.benchmark.macro.StartupMode
-import androidx.benchmark.macro.StartupTimingMetric
+import androidx.benchmark.macro.*
 import androidx.benchmark.macro.junit4.MacrobenchmarkRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.uiautomator.By
@@ -28,32 +26,53 @@ class ExampleStartupBenchmark {
     @get:Rule
     val benchmarkRule = MacrobenchmarkRule()
 
+
     @Test
-    fun startup() = benchmarkRule.measureRepeated(
+    fun startUpCompilationModeNone() = startup(CompilationMode.None())
+
+    @Test
+    fun startUpCompilationModePartial() = startup(CompilationMode.Partial())
+
+
+    @Test
+    fun scrollCompilationModeNone() = scrollRecyclerView(CompilationMode.None())
+
+    @Test
+    fun scrollCompilationModePartial() = scrollRecyclerView(CompilationMode.Partial())
+
+
+    fun startup(mode: CompilationMode) = benchmarkRule.measureRepeated(
         packageName = packageName,
         metrics = listOf(StartupTimingMetric()),
         iterations = 5,
-        startupMode = StartupMode.COLD
+        startupMode = StartupMode.COLD,
+        compilationMode = mode
     ) {
         pressHome()
         startActivityAndWait()
     }
 
-    @Test
-    fun scrollRecyclerView() = benchmarkRule.measureRepeated(
+    fun scrollRecyclerView(mode: CompilationMode) = benchmarkRule.measureRepeated(
         packageName = packageName,
         metrics = listOf(FrameTimingMetric()),
         iterations = 5,
         startupMode = StartupMode.COLD,
+        compilationMode = mode,
         setupBlock = {
             pressHome()
             startActivityAndWait()
         }
     ) {
+        scrollRecyclerView()
+    }
+
+
+    fun MacrobenchmarkScope.scrollRecyclerView() {
         val recyclerView = device.findObject(By.res(packageName, "recyclerView_celestial"))
         recyclerView.setGestureMargin(device.displayWidth / 5)
         recyclerView.fling(Direction.DOWN)
-        recyclerView.fling(Direction.DOWN)
+        recyclerView.fling(Direction.UP)
+
         device.waitForIdle()
     }
 
